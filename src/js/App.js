@@ -1,18 +1,33 @@
 import React from 'react';
+import HomeView from './views/Home';
+import TestView from './views/test'
+
+import {
+    BrowserRouter,
+    Switch,
+    Routes,
+    Route,
+    Link,
+    Router
+} from 'react-router-dom'
+// import {
+//     BrowserRouter as Router,
+//     Switch,
+//     Route,
+//     Link
+//   } from "react-router-dom";
 
 export default function App(){
-    const title = "hello world ";
-    const enhancedTitle = title + ' - React App!';
-
-    const sendNotification = ()=>{
-        alert('Hello World');
-        e_notification.sendNotification('e notification');
-    }
-
     return (
-        <>
-            <h1>{enhancedTitle}</h1>
-            <button onClick={sendNotification}>send notif</button>
-        </>
+        <div>
+            <HomeView />
+            {/* <BrowserRouter>
+                <Link to='/'>home</Link>
+                <Switch>
+                    <Route path='/' element={<HomeView />} />
+                    <Route path='/test' element={<TestView />} />
+                </Switch>
+            </BrowserRouter> */}
+        </div>
     )
 }
